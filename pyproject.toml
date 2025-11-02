@@ -14,6 +14,7 @@ dependencies = [
     "python-dotenv>=1.2.1",
     "python-telegram-bot>=22.5",
     "redis>=7.0.1",
+    "requests>=2.32.5",
 ]
 
 [dependency-groups]
@@ -23,3 +24,13 @@ dev = [
     "pytest>=8.4.2",
     "pytest-django>=4.11.1",
 ]
+
+[tool.black]
+line-length = 119
+exclude = '''
+/(
+    \.git
+  | \.venv
+  | venv
+)/
+'''
