@@ -12,6 +12,11 @@ class HabitViewSet(viewsets.ModelViewSet):
     queryset = Habit.objects.all()
 
     def get_queryset(self):
+        if getattr(self, 'swagger_fake_view', False):
+            return Habit.objects.none()
+        
+        if self.action == 'public':
+            return Habit.objects.filter(is_public=True)
         return self.queryset.filter(user=self.request.user)
 
     def perform_create(self, serializer):
