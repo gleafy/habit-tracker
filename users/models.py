@@ -1,5 +1,11 @@
-from django.contrib.auth.models import User
 from django.db import models
+from django.contrib.auth.models import AbstractUser
+
+
+# https://docs.djangoproject.com/en/5.2/topics/auth/customizing/#using-a-custom-user-model-when-starting-a-project
+# Чтобы было
+class User(AbstractUser):
+    pass
 
 
 class TelegramUser(models.Model):

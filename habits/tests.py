@@ -1,9 +1,8 @@
-from django.contrib.auth.models import User
 from django.test import TestCase
 from django.utils import timezone
 from rest_framework import status
 from rest_framework.test import APITestCase
-from users.models import TelegramUser
+from users.models import User, TelegramUser
 from habits.tasks import send_telegram_reminders
 from unittest.mock import patch, Mock
 from habits.models import Habit
