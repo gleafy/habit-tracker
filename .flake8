@@ -8,3 +8,4 @@ exclude =
     env,
     build,
     dist
+    migrations
